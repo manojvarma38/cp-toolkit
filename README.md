@@ -1,62 +1,59 @@
 # cp-toolkit
 
-# Simple Competitive Programming Test Runner
+## Simple Competitive Programming Test Runner
 
-This project provides a basic framework for compiling and testing competitive programming solutions written in C++. It automates the process of compiling a user's solution, running it against a given input, and comparing its output with an expected output.
+A minimal framework for compiling and testing C++ competitive programming solutions. It automates compilation, execution, and output comparison against test cases.
 
-## Overview
-
-The `main.cpp` script orchestrates the testing process by utilizing functions from `runner.hpp` and `runner.cpp` to compile, execute, and compare the output of a user-submitted C++ solution against predefined test cases.
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-├── main.cpp          (Test runner entry point)
-├── runner.cpp        (Implements testing functionalities)
-├── runner.hpp        (Declares functions in runner.cpp)
+cp-toolkit/
+├── main.cpp               # Entry point for test runner
+├── runner.cpp             # Implementation of test logic
+├── runner.hpp             # Header file
 ├── submissions/
-├    └── solution.cpp  (User's solution code)
-├    └── user_output.txt (Output from the user's solution)
-└── tests/
-├    ├── input.in      (Input data for the solution)
-├    └── expected_output.out (Expected output for the input)
-├── compile_errors.txt (Compilation error log)
+│   ├── solution.cpp       # Your solution
+│   └── user_output.txt    # Output generated
+├── tests/
+│   ├── input.in           # Input test case
+│   └── expected_output.out # Expected output
+├── compile_errors.txt     # Compilation errors, if any
 ```
 
-## Usage
+## 🚀 Usage
 
-1.  **Prepare Solution:** Place your C++ solution file in the `submissions` directory and name it `solution.cpp`.
-2.  **Create Test Case:**
-    * Place the input for your solution in a file named `input.in` within the `tests` directory.
-    * Place the corresponding expected output in a file named `expected_output.out` within the `tests` directory.
-3.  **Compile Runner:** Open your terminal in the project root and compile the test runner:
-    ```bash
-    g++ main.cpp runner.cpp -o test_runner -std=c++17
-    ```
-4.  **Run Tests:** Execute the compiled test runner:
-    ```bash
-    ./test_runner
-    ```
+1. **Add Your Code:**
+   - Place your C++ code in `submissions/solution.cpp`
 
-## Output
+2. **Add Test Case:**
+   - Add input in `tests/input.in`
+   - Add expected output in `tests/expected_output.out`
 
-The test runner will provide feedback on the testing process:
+3. **Compile:**
+   ```bash
+   g++ main.cpp runner.cpp -o test_runner -std=c++17
+   ```
 
-* **Compilation Status:** Indicates whether the compilation was successful or if errors occurred (check `compile_errors.txt`).
-* **Execution Status:** Reports whether the solution ran successfully and the execution time, or if a runtime error occurred.
-* **Comparison Result:** States whether the user's output matches the expected output. If differences are found, the first differing line will be displayed.
+4. **Run:**
+   ```bash
+   ./test_runner
+   ```
 
-## Dependencies
+## 🧾 Output
 
-* **g++:** GNU C++ compiler (version supporting C++17).
+- ✅ Compilation success or errors (in `compile_errors.txt`)
+- ⏱️ Execution time or runtime failure
+- 📋 Output comparison with line-by-line mismatches (if any)
 
-## Potential Enhancements
+## ⚙️ Requirements
 
-* Support for multiple test cases.
-* Options for different output comparison methods (e.g., ignoring whitespace).
-* Automated discovery of test files.
-* More detailed reporting of output differences.
-* Integration with common testing frameworks.
-* Implementation of execution timeouts.
+- g++ (C++17 or later)
+- Linux/Mac or WSL for Windows users
 
+## 🔧 Optional Ideas
+
+- Stress testing
+- Add support for time/memory limits
+
+---
 
