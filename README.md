@@ -15,12 +15,12 @@ The `main.cpp` script orchestrates the testing process by utilizing functions fr
 ├── runner.cpp        (Implements testing functionalities)
 ├── runner.hpp        (Declares functions in runner.cpp)
 ├── submissions/
-│   └── solution.cpp  (User's solution code)
+├    └── solution.cpp  (User's solution code)
+├    └── user_output.txt (Output from the user's solution)
 └── tests/
-    ├── input.in      (Input data for the solution)
-    └── expected_output.out (Expected output for the input)
+├    ├── input.in      (Input data for the solution)
+├    └── expected_output.out (Expected output for the input)
 ├── compile_errors.txt (Compilation error log)
-└── user_output.txt    (Output from the user's solution)
 ```
 
 ## Usage
